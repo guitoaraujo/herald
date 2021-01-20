@@ -1,31 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Messages</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @messages.each do |message| %>
-      <tr>
-        <td><%= message.title %></td>
-        <td><%= message.content %></td>
-        <td><%= message.user %></td>
-        <td><%= link_to 'Show', message %></td>
-        <td><%= link_to 'Edit', edit_message_path(message) %></td>
-        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Message', new_message_path %>
+<div class="container">
+  <div class="row">
+    <div class="col s4">
+      SIDEBAR
+    </div>
+    <div class="col s8">
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>Messages</h4></li>
+        <% @messages.each do |message| %>
+          <li class="collection-item">
+            <div>
+              <%= message.content %>
+              <%= link_to user_messages_url(message), class: 'secondary-content', method: :delete, data: {confirm: 'sure?'} do %>
+                <i class="material-icons">
+                  cancel
+                </i>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
