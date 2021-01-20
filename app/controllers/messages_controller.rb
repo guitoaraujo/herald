@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
 
   def destroy
     @message.destroy
-    edirect_to messages_url
+    redirect_to user_messages_url
   end
 
   private

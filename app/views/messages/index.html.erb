@@ -12,7 +12,7 @@ USER MESSAGES INDEX / ALL MESSAGES
           <li class="collection-item">
             <div>
               <%= message.content %>
-              <%= link_to user_messages_url(message), class: 'secondary-content', method: :delete, data: { confirm: 'sure?' } do %>
+              <%= link_to user_message_url(id: message.id), class: 'secondary-content', method: :delete, data: { confirm: 'sure?' } do %>
                 <i class="material-icons">
                   cancel
                 </i>
