@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show]
 
   def show
-    @messages = @user.messages.visible 
+    @messages = @user.messages.visible
   end
 
   private

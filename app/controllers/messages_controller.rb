@@ -3,7 +3,7 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: %i[destroy]
   before_action :authenticate_user!, only: %i[index]
-  
+
   def index
     @messages = current_user.messages
   end
@@ -23,11 +23,11 @@ class MessagesController < ApplicationController
   end
 
   private
-  
+
   def set_message
     @message = Message.find(params[:id])
   end
-  
+
   def message_params
     params.permit(:content, :user_id)
   end
