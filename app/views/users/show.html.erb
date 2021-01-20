@@ -1,12 +1,12 @@
-USER SHOW / MESSAGES
+USER SHOW / VISIBLE MESSAGES
 
 <div class="container">
   <div class="row">
     <div class="col s4">
-      SIDEBAR
+      <%= render 'shared/sidebar' %> 
     </div>
     <div class="col s8">
-      FORM
+      SEND MESSAGES
 
       <%= form_tag user_messages_url(user_id: @user.id) do %>
         <%= text_field_tag :content %>

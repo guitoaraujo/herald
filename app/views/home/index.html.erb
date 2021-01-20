@@ -3,6 +3,11 @@
     IMAGE
   </div>
   <div class="col s6">
-    CONTENT
+    SEARCH USERS
+    <%= render 'shared/search_user_form' %>
+
+    <% @users.each do |user| %>
+      <%= link_to "#{user.email}", user_path(user) %>
+    <% end %>
   </div>
 </div>
