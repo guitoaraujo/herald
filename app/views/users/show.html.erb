@@ -1,0 +1,22 @@
+USER SHOW / MESSAGES
+
+<div class="container">
+  <div class="row">
+    <div class="col s4">
+      SIDEBAR
+    </div>
+    <div class="col s8">
+      FORM
+
+      <%= form_tag user_messages_url(user_id: @user.id) do %>
+        <%= text_field_tag :content %>
+        <%= hidden_field_tag :user_id, @user.id %>
+        <%= submit_tag %>
+      <% end %>
+
+      MAIN CONTENT
+
+      <%= @messages.count %>
+    </div>
+  </div>
+</div>
